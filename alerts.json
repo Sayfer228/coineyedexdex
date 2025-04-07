@@ -1,0 +1,29 @@
+[
+  {
+    "timestamp": "2025-04-03 13:27:17",
+    "symbol": "DEXE",
+    "prices": {
+      "ethereum": 14.88,
+      "bsc": 17.67
+    },
+    "diff": 17.14
+  },
+  {
+    "timestamp": "2025-04-03 13:28:18",
+    "symbol": "DEXE",
+    "prices": {
+      "ethereum": 14.88,
+      "bsc": 17.67
+    },
+    "diff": 17.14
+  },
+  {
+    "timestamp": "2025-04-03 14:14:12",
+    "symbol": "OX",
+    "prices": {
+      "solana": 0.003556,
+      "base": 0.003507
+    },
+    "diff": 1.39
+  }
+]

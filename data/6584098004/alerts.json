@@ -1,0 +1,38 @@
+[
+  {
+    "timestamp": "2025-04-06 23:41:05",
+    "symbol": "DEXE",
+    "prices": {
+      "bsc": 17.64,
+      "ethereum": 14.52
+    },
+    "diff": 19.4
+  },
+  {
+    "timestamp": "2025-04-06 23:42:06",
+    "symbol": "DEXE",
+    "prices": {
+      "bsc": 17.64,
+      "ethereum": 14.52
+    },
+    "diff": 19.4
+  },
+  {
+    "timestamp": "2025-04-06 23:45:40",
+    "symbol": "DEXE",
+    "prices": {
+      "bsc": 17.64,
+      "ethereum": 14.52
+    },
+    "diff": 19.4
+  },
+  {
+    "timestamp": "2025-04-06 23:46:41",
+    "symbol": "DEXE",
+    "prices": {
+      "bsc": 17.64,
+      "ethereum": 14.52
+    },
+    "diff": 19.4
+  }
+]

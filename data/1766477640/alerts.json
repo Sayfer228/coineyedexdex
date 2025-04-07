@@ -1,0 +1,452 @@
+[
+  {
+    "timestamp": "2025-04-03 21:52:07",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.003359,
+      "solana": 0.003306
+    },
+    "diff": 1.59
+  },
+  {
+    "timestamp": "2025-04-03 21:53:08",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.003353,
+      "solana": 0.003317
+    },
+    "diff": 1.08
+  },
+  {
+    "timestamp": "2025-04-03 21:54:10",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.003353,
+      "solana": 0.003317
+    },
+    "diff": 1.08
+  },
+  {
+    "timestamp": "2025-04-03 21:55:12",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.003347,
+      "solana": 0.003285
+    },
+    "diff": 1.87
+  },
+  {
+    "timestamp": "2025-04-03 21:56:14",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.00334,
+      "solana": 0.003285
+    },
+    "diff": 1.66
+  },
+  {
+    "timestamp": "2025-04-03 21:57:15",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.003339,
+      "solana": 0.003285
+    },
+    "diff": 1.63
+  },
+  {
+    "timestamp": "2025-04-03 21:58:18",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.003337,
+      "solana": 0.003285
+    },
+    "diff": 1.57
+  },
+  {
+    "timestamp": "2025-04-03 21:59:20",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.00334,
+      "solana": 0.003285
+    },
+    "diff": 1.66
+  },
+  {
+    "timestamp": "2025-04-03 22:00:22",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.00334,
+      "solana": 0.003285
+    },
+    "diff": 1.66
+  },
+  {
+    "timestamp": "2025-04-03 22:01:24",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.003341,
+      "solana": 0.003285
+    },
+    "diff": 1.69
+  },
+  {
+    "timestamp": "2025-04-03 22:02:27",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.003341,
+      "solana": 0.003285
+    },
+    "diff": 1.69
+  },
+  {
+    "timestamp": "2025-04-03 22:03:29",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.003339,
+      "solana": 0.003285
+    },
+    "diff": 1.63
+  },
+  {
+    "timestamp": "2025-04-03 22:04:32",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.003346,
+      "solana": 0.003285
+    },
+    "diff": 1.84
+  },
+  {
+    "timestamp": "2025-04-03 22:05:33",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.003347,
+      "solana": 0.003285
+    },
+    "diff": 1.87
+  },
+  {
+    "timestamp": "2025-04-03 22:06:36",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.003345,
+      "solana": 0.00329
+    },
+    "diff": 1.66
+  },
+  {
+    "timestamp": "2025-04-03 22:07:38",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.00335,
+      "solana": 0.00329
+    },
+    "diff": 1.81
+  },
+  {
+    "timestamp": "2025-04-03 22:08:40",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.003351,
+      "solana": 0.00329
+    },
+    "diff": 1.84
+  },
+  {
+    "timestamp": "2025-04-03 22:09:42",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.00335,
+      "solana": 0.00329
+    },
+    "diff": 1.81
+  },
+  {
+    "timestamp": "2025-04-03 22:10:44",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.00335,
+      "solana": 0.00329
+    },
+    "diff": 1.81
+  },
+  {
+    "timestamp": "2025-04-03 22:11:46",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.003348,
+      "solana": 0.00329
+    },
+    "diff": 1.75
+  },
+  {
+    "timestamp": "2025-04-03 22:12:48",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.003345,
+      "solana": 0.00329
+    },
+    "diff": 1.66
+  },
+  {
+    "timestamp": "2025-04-03 22:13:50",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.003346,
+      "solana": 0.00329
+    },
+    "diff": 1.69
+  },
+  {
+    "timestamp": "2025-04-03 22:14:52",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.003348,
+      "solana": 0.00329
+    },
+    "diff": 1.75
+  },
+  {
+    "timestamp": "2025-04-03 22:15:55",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.003346,
+      "solana": 0.003303
+    },
+    "diff": 1.29
+  },
+  {
+    "timestamp": "2025-04-03 22:16:56",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.003339,
+      "solana": 0.003303
+    },
+    "diff": 1.08
+  },
+  {
+    "timestamp": "2025-04-03 22:17:59",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.003339,
+      "solana": 0.003303
+    },
+    "diff": 1.08
+  },
+  {
+    "timestamp": "2025-04-03 22:23:08",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.003329,
+      "solana": 0.003276
+    },
+    "diff": 1.6
+  },
+  {
+    "timestamp": "2025-04-03 22:24:10",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.003325,
+      "solana": 0.003276
+    },
+    "diff": 1.48
+  },
+  {
+    "timestamp": "2025-04-03 22:25:12",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.003329,
+      "solana": 0.003276
+    },
+    "diff": 1.6
+  },
+  {
+    "timestamp": "2025-04-03 22:26:14",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.00333,
+      "solana": 0.003276
+    },
+    "diff": 1.63
+  },
+  {
+    "timestamp": "2025-04-03 22:27:16",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.003328,
+      "solana": 0.003276
+    },
+    "diff": 1.57
+  },
+  {
+    "timestamp": "2025-04-03 22:28:18",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.003331,
+      "solana": 0.003276
+    },
+    "diff": 1.66
+  },
+  {
+    "timestamp": "2025-04-03 22:29:20",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.003331,
+      "solana": 0.003276
+    },
+    "diff": 1.66
+  },
+  {
+    "timestamp": "2025-04-03 22:30:22",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.003324,
+      "solana": 0.003276
+    },
+    "diff": 1.45
+  },
+  {
+    "timestamp": "2025-04-03 22:31:24",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.003323,
+      "solana": 0.003276
+    },
+    "diff": 1.42
+  },
+  {
+    "timestamp": "2025-04-03 22:32:26",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.003322,
+      "solana": 0.003276
+    },
+    "diff": 1.39
+  },
+  {
+    "timestamp": "2025-04-03 22:33:28",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.003326,
+      "solana": 0.003276
+    },
+    "diff": 1.51
+  },
+  {
+    "timestamp": "2025-04-03 22:34:30",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.003324,
+      "solana": 0.003288
+    },
+    "diff": 1.09
+  },
+  {
+    "timestamp": "2025-04-03 22:35:32",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.003328,
+      "solana": 0.003288
+    },
+    "diff": 1.21
+  },
+  {
+    "timestamp": "2025-04-03 22:36:34",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.00333,
+      "solana": 0.003294
+    },
+    "diff": 1.09
+  },
+  {
+    "timestamp": "2025-04-03 22:41:45",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.00333,
+      "solana": 0.003295
+    },
+    "diff": 1.06
+  },
+  {
+    "timestamp": "2025-04-03 22:42:46",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.00333,
+      "solana": 0.003295
+    },
+    "diff": 1.06
+  },
+  {
+    "timestamp": "2025-04-03 22:43:48",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.003329,
+      "solana": 0.003295
+    },
+    "diff": 1.03
+  },
+  {
+    "timestamp": "2025-04-03 23:17:12",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.003248,
+      "solana": 0.003282
+    },
+    "diff": 1.04
+  },
+  {
+    "timestamp": "2025-04-03 23:18:13",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.003246,
+      "solana": 0.003282
+    },
+    "diff": 1.1
+  },
+  {
+    "timestamp": "2025-04-03 23:19:17",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.003246,
+      "solana": 0.003282
+    },
+    "diff": 1.1
+  },
+  {
+    "timestamp": "2025-04-03 23:20:19",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.003248,
+      "solana": 0.003282
+    },
+    "diff": 1.04
+  },
+  {
+    "timestamp": "2025-04-03 23:21:20",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.003247,
+      "solana": 0.003282
+    },
+    "diff": 1.07
+  },
+  {
+    "timestamp": "2025-04-03 23:29:02",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.003242,
+      "solana": 0.003277
+    },
+    "diff": 1.07
+  },
+  {
+    "timestamp": "2025-04-03 23:30:03",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.00324,
+      "solana": 0.003277
+    },
+    "diff": 1.14
+  }
+]

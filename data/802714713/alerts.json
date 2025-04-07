@@ -1,0 +1,452 @@
+[
+  {
+    "timestamp": "2025-04-07 12:11:12",
+    "symbol": "GFI",
+    "prices": {
+      "polygon": 0.00116,
+      "sonic": 0.001081
+    },
+    "diff": 7.05
+  },
+  {
+    "timestamp": "2025-04-07 12:12:13",
+    "symbol": "GFI",
+    "prices": {
+      "polygon": 0.00116,
+      "sonic": 0.001081
+    },
+    "diff": 7.05
+  },
+  {
+    "timestamp": "2025-04-07 12:12:13",
+    "symbol": "DOMI",
+    "prices": {
+      "beam": 0.004204,
+      "avalanche": 0.00371
+    },
+    "diff": 12.48
+  },
+  {
+    "timestamp": "2025-04-07 12:13:14",
+    "symbol": "GFI",
+    "prices": {
+      "polygon": 0.00116,
+      "sonic": 0.001081
+    },
+    "diff": 7.05
+  },
+  {
+    "timestamp": "2025-04-07 12:13:15",
+    "symbol": "DOMI",
+    "prices": {
+      "beam": 0.004204,
+      "avalanche": 0.00371
+    },
+    "diff": 12.48
+  },
+  {
+    "timestamp": "2025-04-07 12:14:15",
+    "symbol": "GFI",
+    "prices": {
+      "polygon": 0.00116,
+      "sonic": 0.001081
+    },
+    "diff": 7.05
+  },
+  {
+    "timestamp": "2025-04-07 12:14:17",
+    "symbol": "DOMI",
+    "prices": {
+      "beam": 0.004204,
+      "avalanche": 0.00371
+    },
+    "diff": 12.48
+  },
+  {
+    "timestamp": "2025-04-07 12:15:17",
+    "symbol": "GFI",
+    "prices": {
+      "polygon": 0.00116,
+      "sonic": 0.001081
+    },
+    "diff": 7.05
+  },
+  {
+    "timestamp": "2025-04-07 12:15:19",
+    "symbol": "DOMI",
+    "prices": {
+      "beam": 0.004204,
+      "avalanche": 0.00371
+    },
+    "diff": 12.48
+  },
+  {
+    "timestamp": "2025-04-07 12:16:19",
+    "symbol": "GFI",
+    "prices": {
+      "polygon": 0.00116,
+      "sonic": 0.001081
+    },
+    "diff": 7.05
+  },
+  {
+    "timestamp": "2025-04-07 12:16:21",
+    "symbol": "DOMI",
+    "prices": {
+      "beam": 0.004204,
+      "avalanche": 0.00371
+    },
+    "diff": 12.48
+  },
+  {
+    "timestamp": "2025-04-07 12:17:20",
+    "symbol": "GFI",
+    "prices": {
+      "polygon": 0.00116,
+      "sonic": 0.001081
+    },
+    "diff": 7.05
+  },
+  {
+    "timestamp": "2025-04-07 12:17:23",
+    "symbol": "DOMI",
+    "prices": {
+      "beam": 0.004204,
+      "avalanche": 0.00371
+    },
+    "diff": 12.48
+  },
+  {
+    "timestamp": "2025-04-07 12:18:21",
+    "symbol": "GFI",
+    "prices": {
+      "polygon": 0.00116,
+      "sonic": 0.001081
+    },
+    "diff": 7.05
+  },
+  {
+    "timestamp": "2025-04-07 12:18:25",
+    "symbol": "DOMI",
+    "prices": {
+      "beam": 0.004204,
+      "avalanche": 0.00371
+    },
+    "diff": 12.48
+  },
+  {
+    "timestamp": "2025-04-07 12:19:23",
+    "symbol": "GFI",
+    "prices": {
+      "polygon": 0.00116,
+      "sonic": 0.001081
+    },
+    "diff": 7.05
+  },
+  {
+    "timestamp": "2025-04-07 12:19:27",
+    "symbol": "DOMI",
+    "prices": {
+      "beam": 0.004204,
+      "avalanche": 0.00371
+    },
+    "diff": 12.48
+  },
+  {
+    "timestamp": "2025-04-07 12:20:24",
+    "symbol": "GFI",
+    "prices": {
+      "polygon": 0.00116,
+      "sonic": 0.001081
+    },
+    "diff": 7.05
+  },
+  {
+    "timestamp": "2025-04-07 12:20:29",
+    "symbol": "DOMI",
+    "prices": {
+      "beam": 0.004204,
+      "avalanche": 0.00371
+    },
+    "diff": 12.48
+  },
+  {
+    "timestamp": "2025-04-07 12:21:25",
+    "symbol": "GFI",
+    "prices": {
+      "polygon": 0.00116,
+      "sonic": 0.001081
+    },
+    "diff": 7.05
+  },
+  {
+    "timestamp": "2025-04-07 12:21:30",
+    "symbol": "DOMI",
+    "prices": {
+      "beam": 0.004204,
+      "avalanche": 0.00371
+    },
+    "diff": 12.48
+  },
+  {
+    "timestamp": "2025-04-07 12:22:27",
+    "symbol": "GFI",
+    "prices": {
+      "polygon": 0.00116,
+      "sonic": 0.001081
+    },
+    "diff": 7.05
+  },
+  {
+    "timestamp": "2025-04-07 12:22:33",
+    "symbol": "DOMI",
+    "prices": {
+      "beam": 0.004204,
+      "avalanche": 0.00371
+    },
+    "diff": 12.48
+  },
+  {
+    "timestamp": "2025-04-07 12:23:28",
+    "symbol": "GFI",
+    "prices": {
+      "polygon": 0.00116,
+      "sonic": 0.001081
+    },
+    "diff": 7.05
+  },
+  {
+    "timestamp": "2025-04-07 12:23:35",
+    "symbol": "DOMI",
+    "prices": {
+      "beam": 0.004204,
+      "avalanche": 0.00371
+    },
+    "diff": 12.48
+  },
+  {
+    "timestamp": "2025-04-07 12:24:30",
+    "symbol": "GFI",
+    "prices": {
+      "polygon": 0.00116,
+      "sonic": 0.001081
+    },
+    "diff": 7.05
+  },
+  {
+    "timestamp": "2025-04-07 12:24:37",
+    "symbol": "DOMI",
+    "prices": {
+      "beam": 0.004204,
+      "avalanche": 0.00371
+    },
+    "diff": 12.48
+  },
+  {
+    "timestamp": "2025-04-07 12:25:31",
+    "symbol": "GFI",
+    "prices": {
+      "polygon": 0.00116,
+      "sonic": 0.001081
+    },
+    "diff": 7.05
+  },
+  {
+    "timestamp": "2025-04-07 12:25:38",
+    "symbol": "DOMI",
+    "prices": {
+      "beam": 0.004204,
+      "avalanche": 0.00371
+    },
+    "diff": 12.48
+  },
+  {
+    "timestamp": "2025-04-07 12:26:33",
+    "symbol": "GFI",
+    "prices": {
+      "polygon": 0.00116,
+      "sonic": 0.001081
+    },
+    "diff": 7.05
+  },
+  {
+    "timestamp": "2025-04-07 12:26:40",
+    "symbol": "DOMI",
+    "prices": {
+      "beam": 0.004204,
+      "avalanche": 0.00371
+    },
+    "diff": 12.48
+  },
+  {
+    "timestamp": "2025-04-07 12:27:35",
+    "symbol": "GFI",
+    "prices": {
+      "polygon": 0.00116,
+      "sonic": 0.001081
+    },
+    "diff": 7.05
+  },
+  {
+    "timestamp": "2025-04-07 12:27:42",
+    "symbol": "DOMI",
+    "prices": {
+      "beam": 0.004204,
+      "avalanche": 0.00371
+    },
+    "diff": 12.48
+  },
+  {
+    "timestamp": "2025-04-07 12:28:36",
+    "symbol": "GFI",
+    "prices": {
+      "polygon": 0.00116,
+      "sonic": 0.001081
+    },
+    "diff": 7.05
+  },
+  {
+    "timestamp": "2025-04-07 12:28:44",
+    "symbol": "DOMI",
+    "prices": {
+      "beam": 0.004204,
+      "avalanche": 0.00371
+    },
+    "diff": 12.48
+  },
+  {
+    "timestamp": "2025-04-07 12:29:37",
+    "symbol": "GFI",
+    "prices": {
+      "polygon": 0.00116,
+      "sonic": 0.001081
+    },
+    "diff": 7.05
+  },
+  {
+    "timestamp": "2025-04-07 12:29:46",
+    "symbol": "DOMI",
+    "prices": {
+      "beam": 0.004204,
+      "avalanche": 0.00371
+    },
+    "diff": 12.48
+  },
+  {
+    "timestamp": "2025-04-07 12:30:39",
+    "symbol": "GFI",
+    "prices": {
+      "polygon": 0.00116,
+      "sonic": 0.001081
+    },
+    "diff": 7.05
+  },
+  {
+    "timestamp": "2025-04-07 12:30:48",
+    "symbol": "DOMI",
+    "prices": {
+      "beam": 0.004204,
+      "avalanche": 0.00371
+    },
+    "diff": 12.48
+  },
+  {
+    "timestamp": "2025-04-07 12:31:40",
+    "symbol": "GFI",
+    "prices": {
+      "polygon": 0.00116,
+      "sonic": 0.001081
+    },
+    "diff": 7.05
+  },
+  {
+    "timestamp": "2025-04-07 12:31:50",
+    "symbol": "DOMI",
+    "prices": {
+      "beam": 0.004204,
+      "avalanche": 0.00371
+    },
+    "diff": 12.48
+  },
+  {
+    "timestamp": "2025-04-07 12:31:59",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.002124,
+      "solana": 0.002049
+    },
+    "diff": 3.59
+  },
+  {
+    "timestamp": "2025-04-07 12:32:42",
+    "symbol": "GFI",
+    "prices": {
+      "polygon": 0.00116,
+      "sonic": 0.001081
+    },
+    "diff": 7.05
+  },
+  {
+    "timestamp": "2025-04-07 13:05:38",
+    "symbol": "OX",
+    "prices": {
+      "base": 0.002364,
+      "solana": 0.002155
+    },
+    "diff": 9.25
+  },
+  {
+    "timestamp": "2025-04-07 13:06:35",
+    "symbol": "DOMI",
+    "prices": {
+      "beam": 0.004204,
+      "avalanche": 0.003665
+    },
+    "diff": 13.7
+  },
+  {
+    "timestamp": "2025-04-07 13:07:36",
+    "symbol": "DOMI",
+    "prices": {
+      "beam": 0.004204,
+      "avalanche": 0.003665
+    },
+    "diff": 13.7
+  },
+  {
+    "timestamp": "2025-04-07 13:08:38",
+    "symbol": "DOMI",
+    "prices": {
+      "beam": 0.004204,
+      "avalanche": 0.003665
+    },
+    "diff": 13.7
+  },
+  {
+    "timestamp": "2025-04-07 13:09:41",
+    "symbol": "DOMI",
+    "prices": {
+      "beam": 0.004204,
+      "avalanche": 0.003665
+    },
+    "diff": 13.7
+  },
+  {
+    "timestamp": "2025-04-07 13:10:43",
+    "symbol": "DOMI",
+    "prices": {
+      "beam": 0.004204,
+      "avalanche": 0.003665
+    },
+    "diff": 13.7
+  },
+  {
+    "timestamp": "2025-04-07 13:11:45",
+    "symbol": "DOMI",
+    "prices": {
+      "beam": 0.004204,
+      "avalanche": 0.003665
+    },
+    "diff": 13.7
+  }
+]
