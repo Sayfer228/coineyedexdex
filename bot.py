@@ -430,7 +430,6 @@ async def list_tokens(message: Message, state: FSMContext):
     await state.clear()
     user_id = message.from_user.id
     user_tokens = load_tokens(user_id)
-    TOKENS[user_id] = user_tokens  # оновити глобальний кеш
 
     if not user_tokens:
         kb = InlineKeyboardBuilder()
@@ -441,41 +440,15 @@ async def list_tokens(message: Message, state: FSMContext):
     kb = InlineKeyboardBuilder()
     for idx, token in enumerate(user_tokens):
         symbol = token.get("symbol") or token.get("name")
-        chains = list(token.get("addresses", {}).keys())
         active = "🟢" if token.get("active", True) else "🔴"
-        kb.row(InlineKeyboardButton(  # ← ЗМІНА ТУТ
-            text=f"{active} {symbol.upper()} ({', '.join(chains)})",
+        threshold = token.get("threshold", MIN_DIFF_PERCENT)  # Виводимо поріг
+        kb.row(InlineKeyboardButton(
+            text=f"{active} {symbol.upper()} | Поріг: {threshold}%",
             callback_data=f"manage_{idx}"
         ))
 
     kb.row(InlineKeyboardButton(text="⬅️ Назад", callback_data="go_back"))
     await message.answer("📋 Обери токен:", reply_markup=kb.as_markup())
-
-async def toggle_token_monitoring(user_id: int, token: dict):
-    """
-    Перемикає моніторинг токена: включає або вимикає його.
-    """
-    symbol = token["symbol"]
-    task_key = f"{user_id}:{symbol}"
-
-    if token.get("active", True):  # Токен активний
-        logger.info(f"Вимикаємо моніторинг для {symbol}.")
-        token["active"] = False  # Вимикаємо моніторинг
-
-        # Зупиняємо завдання моніторингу
-        if task_key in monitor_tasks:
-            logger.info(f"Зупиняємо моніторинг для {symbol}. Завдання буде скасовано.")
-            monitor_tasks[task_key].cancel()
-            del monitor_tasks[task_key]
-        else:
-            logger.warning(f"Немає активного моніторингу для токена {symbol}.")
-    else:  # Токен неактивний
-        logger.info(f"Вмикаємо моніторинг для {symbol}.")
-        token["active"] = True  # Вмикаємо моніторинг
-        await start_monitoring_for_token(user_id, token)
-
-    # Зберігаємо оновлені дані токенів
-    save_tokens(user_id, TOKENS[user_id])
 
 
 
@@ -534,6 +507,7 @@ async def manage_token(callback: CallbackQuery, state: FSMContext):
     )
 
 
+@dp.message(EditTokenStates.waiting_for_threshold)
 async def set_threshold(message: Message, state: FSMContext):
     try:
         value = float(message.text.strip().replace(",", "."))
@@ -542,26 +516,10 @@ async def set_threshold(message: Message, state: FSMContext):
 
         data = await state.get_data()
         idx = data["edit_idx"]
-        token = TOKENS[data["user_id"]][idx]  # Отримуємо токен із глобального кешу
+        TOKENS[idx]["threshold"] = value
+        save_tokens()
 
-        # Якщо поріг змінився, зупиняємо старе завдання моніторингу і запускаємо нове
-        old_threshold = token["threshold"]
-        if value != old_threshold:
-            logger.info(f"Змінюємо поріг для токена {token['symbol']} з {old_threshold}% на {value}%")
-            token["threshold"] = value  # Оновлюємо поріг
-
-            save_tokens(data["user_id"], TOKENS[data["user_id"]])  # Зберігаємо новий поріг у файл
-
-            # Зупиняємо старе завдання моніторингу, якщо воно є
-            task_key = f"{data['user_id']}:{token['symbol']}"
-            if task_key in monitor_tasks:
-                monitor_tasks[task_key].cancel()
-                del monitor_tasks[task_key]  # Видаляємо старе завдання
-
-            # Запускаємо нове завдання моніторингу з оновленим порогом
-            await start_monitoring_for_token(data['user_id'], token)
-
-        symbol = token["symbol"]
+        symbol = TOKENS[idx]["symbol"]
         await message.answer(f"✅ Новий поріг для <b>{symbol.upper()}</b>: {value:.2f}%", parse_mode="HTML")
         await list_tokens(message, state)
 
@@ -621,14 +579,15 @@ async def save_new_threshold(message: Message, state: FSMContext):
         save_tokens(user_id, tokens)
         TOKENS[user_id] = tokens
 
-        # Зупиняємо старий таск моніторингу (якщо існує)
+        # Зупиняємо старе завдання моніторингу, якщо воно існує
         symbol = token["symbol"]
         task_key = f"{user_id}:{symbol}"
         if task_key in monitor_tasks:
+            logger.info(f"Скасовуємо існуюче завдання моніторингу для {symbol}.")
             monitor_tasks[task_key].cancel()
             del monitor_tasks[task_key]
 
-        # Запускаємо новий з оновленим порогом
+        # Запускаємо нове завдання моніторингу для цього токена з новим порогом
         await start_monitoring_for_token(user_id, token)
 
         await message.answer(
@@ -640,6 +599,7 @@ async def save_new_threshold(message: Message, state: FSMContext):
 
     except ValueError:
         await message.answer("⚠️ Введи коректне число від 0 до 100 (наприклад, 1.5):")
+
 
 
 
@@ -660,7 +620,7 @@ async def delete_token(callback: CallbackQuery, state: FSMContext):
 
         # 🛑 Зупиняємо моніторинг, якщо активний
         if task_key in monitor_tasks:
-            monitor_tasks[task_key].cancel()
+            monitor_tasks[task_key].cancel()  # Зупиняємо таск моніторингу
             del monitor_tasks[task_key]
 
         # Зберігаємо оновлений список токенів
@@ -679,24 +639,26 @@ async def delete_token(callback: CallbackQuery, state: FSMContext):
 
 
 
+
 MIN_DIFF_PERCENT = 1  # Мінімальна різниця в % для сповіщення
 MIN_LIQUIDITY = 10_000
 
 import time  # У верхній частині файлу, якщо ще не імпортовано
+
 
 async def monitor_token_by_address(user_id: int, token: dict, session: aiohttp.ClientSession, bot: Bot):
     symbol = token["symbol"]
     addresses = token["addresses"]
     last_alert_time = 0
 
-    # Якщо токен не активний — припиняємо моніторинг
+    logger.info(f"[MONITORING] Починаємо моніторинг для {symbol} на адресах {list(addresses.keys())}.")
+
+    # Перевіряємо чи активний токен
     if not token.get("active", True):
-        logger.info(f"[MONITORING] [{user_id}] {symbol} неактивний. Пропускаємо моніторинг.")
+        logger.info(f"[MONITORING] Токен {symbol} не активний. Пропускаємо моніторинг.")
         return
 
-    logger.info(f"[MONITORING] [{user_id}] {symbol} → {list(addresses.keys())} | ACTIVE")
-
-    while token.get("active", True):  # Потрібно перевіряти активність токена кожного разу
+    while token.get("active", True):  # Повторюємо моніторинг для активних токенів
         prices = {}
         now = time.time()
 
@@ -705,7 +667,7 @@ async def monitor_token_by_address(user_id: int, token: dict, session: aiohttp.C
             try:
                 async with session.get(url) as resp:
                     if resp.status != 200:
-                        logger.error(f"Помилка при запиті до {url}, статус: {resp.status}")
+                        logger.error(f"[MONITORING] Помилка при запиті до {url}, статус: {resp.status}")
                         await bot.send_message(user_id, "❌ Сталася помилка при отриманні даних. Спробуйте ще раз.")
                         return
                     data = await resp.json()
@@ -723,7 +685,7 @@ async def monitor_token_by_address(user_id: int, token: dict, session: aiohttp.C
                 if best_price:
                     prices[chain] = best_price
 
-            except Exception:
+            except Exception as e:
                 logger.exception(f"[ERROR monitor_by_address {symbol}]")
 
         if len(prices) >= 2:
@@ -731,7 +693,7 @@ async def monitor_token_by_address(user_id: int, token: dict, session: aiohttp.C
             diff = abs(v[0] - v[1]) / ((v[0] + v[1]) / 2) * 100
             current_threshold = token.get("threshold", MIN_DIFF_PERCENT)
 
-            logger.debug(f"[MONITORING] Різниця цін для {symbol}: {diff:.2f}% | Поріг: {current_threshold}%")
+            logger.debug(f"[MONITORING] Різниця цін для {symbol}: {diff:.2f}% | Поріг: {current_threshold:.2f}%")
 
             if diff >= current_threshold and now - last_alert_time >= 60:
                 msg = (
@@ -747,25 +709,31 @@ async def monitor_token_by_address(user_id: int, token: dict, session: aiohttp.C
 
 
 
-async def start_monitoring_for_token(user_id: int, token: dict):
-    """
-    Запускає моніторинг для конкретного токена.
-    """
-    symbol = token.get("symbol") or token.get("name")
+async def update_token_threshold(user_id: int, token: dict, new_threshold: float):
+    old_threshold = token.get("threshold", MIN_DIFF_PERCENT)
+    if abs(old_threshold - new_threshold) > 0.001:
+        logger.info(f"Змінюємо поріг для {token['symbol']} з {old_threshold:.2f}% на {new_threshold:.2f}%")
+        token["threshold"] = new_threshold
+        await stop_monitoring_for_token(user_id, token)
+        await start_monitoring_for_token(user_id, token)
+        logger.info(f"Поріг для {token['symbol']} оновлено.")
 
+async def start_monitoring_for_token(user_id: int, token: dict):
+    symbol = token.get("symbol") or token.get("name")
     if "addresses" in token:
         task_key = f"{user_id}:{symbol}"
 
-        # Якщо завдання вже є, то не запускаємо нове
+        # Перевірка, чи вже є завдання для цього токена
         if task_key in monitor_tasks:
-            logger.info(f"Завдання моніторингу для токена {symbol} вже активне.")
-            return
+            logger.info(f"Завдання для токена {symbol} вже активне. Не запускаємо нове.")
+            return  # Якщо завдання вже є, нічого не робимо
 
         # Створюємо завдання для моніторингу
         task = asyncio.create_task(monitor_token_by_address(user_id, token, session, bot))
         monitor_tasks[task_key] = task  # Додаємо завдання до словника
     else:
         logger.warning(f"Пропущено токен без адреси для моніторингу: {symbol}")
+
 
 
 import time
@@ -955,12 +923,26 @@ def save_tokens(user_id: int, tokens: list):
         json.dump(tokens, f, indent=2, ensure_ascii=False)
     TOKENS[user_id] = tokens  # Оновлюємо кеш токенів, щоб зміни були доступні негайно
 
+async def stop_monitoring_for_token(user_id: int, token: dict):
+    symbol = token.get("symbol") or token.get("name")
+    task_key = f"{user_id}:{symbol}"
+
+    # Перевірка, чи є активне завдання
+    if task_key in monitor_tasks:
+        logger.info(f"Вимикаємо моніторинг для токена {symbol}.")
+        monitor_tasks[task_key].cancel()  # Останавливаем задачу
+        del monitor_tasks[task_key]  # Видаляємо з моніторингу
+        logger.info(f"Моніторинг для токена {symbol} вимкнено.")
+    else:
+        logger.info(f"Токен {symbol} вже не моніториться або завдання немає.")
+
+
 @dp.callback_query(lambda c: c.data.startswith("toggle_"))
 async def toggle_token(callback: CallbackQuery, state: FSMContext):
     user_id = callback.from_user.id
     idx = int(callback.data.replace("toggle_", ""))
-
     tokens = TOKENS.get(user_id, [])
+
     if idx >= len(tokens):
         await callback.answer("⚠️ Токен не знайдено.")
         return
@@ -968,16 +950,22 @@ async def toggle_token(callback: CallbackQuery, state: FSMContext):
     token = tokens[idx]
     symbol = token["symbol"]
 
-    # Викликаємо функцію для перемикання моніторингу
-    await toggle_token_monitoring(user_id, token)
-
-    # Відповідаємо користувачу
+    # Якщо токен активний — вимикаємо моніторинг
     if token["active"]:
-        await callback.answer("✅ Моніторинг увімкнено.")
-    else:
+        token["active"] = False
+        # Скасовуємо завдання моніторингу
+        task_key = f"{user_id}:{symbol}"
+        if task_key in monitor_tasks:
+            monitor_tasks[task_key].cancel()
+            del monitor_tasks[task_key]
         await callback.answer("⛔ Моніторинг вимкнено.")
+    else:
+        # Якщо токен неактивний — включаємо моніторинг
+        token["active"] = True
+        await start_monitoring_for_token(user_id, token)
+        await callback.answer("✅ Моніторинг увімкнено.")
 
-    # Оновлюємо кеш
+    # Оновлюємо глобальний список токенів
     TOKENS[user_id] = tokens
     save_tokens(user_id, tokens)
 
